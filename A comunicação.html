@@ -14,7 +14,6 @@
             background-image: url('img/BANNER\ FUNDO.png'); /* Caminho da imagem */
             background-size: cover; /* Faz com que a imagem cubra toda a tela */
             background-position: center; /* Centraliza a imagem no meio da tela */
-            height: 100vh; /* Garante que a altura do body seja 100% da altura da viewport */
             margin: 0;
             font-family: 'Dejanire Headline Bold Italic', 'Arboria Book', 'Gimlet Display', Arial, sans-serif;
         }
@@ -156,37 +155,7 @@
         footer .footer-links a:hover {
             text-decoration: underline;
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-image: url('img/BANNER FUNDO.png');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Dejanire Headline Bold Italic', 'Arboria Book', 'Gimlet Display', Arial, sans-serif;
-        }
-        /* Resto do CSS */
-
-        .banner {
-            position: relative; /* Cria um contexto para o banner */
-            width: 100%;
-            height: calc(70vh - 100px); /* Ocupa a altura restante da viewport */
-    margin-top: -37px; /* Adiciona uma margem superior para afastar do cabeçalho */
-    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse o contêiner */
-        }
-        .banner img {
-            position: absolute; /* Posiciona a imagem absolutamente */
-            top: 50%; /* Centraliza verticalmente */
-            left: 50%; /* Centraliza horizontalmente */
-            width: 100%; /* Faz a imagem ocupar 100% da largura */
-            height: 100%; /* Faz a imagem ocupar 100% da altura */
-            object-fit: cover; /* Mantém a proporção da imagem e cobre o contêiner */
-            transform: translate(-50%, -50%); /* Centraliza a imagem */
-        }
+    
     </style>
 </head>
 <body>
@@ -216,10 +185,18 @@
     </header>
     <br>
     <br>
-    <div class="banner">
-        <img src="IMAGENS DO SITE/banner a comunicação.jpeg" alt="Banner">
-    </div>
     <main>
+        <br>
+        <div class="content"></div>
+        <div class="intro">
+            <h1></h1>
+            <div style="background-color: #f3e6d5; border: 1px solid #1679ab; padding: 1.5em; border-radius: 10px;">
+                <h3>O avanço tecnológico na área das comunicações tem sido fundamental nas transformações do espaço geográfico, de maneira a moldar a forma como as pessoas, os governos e as empresas estabelecem um relacionamento. 
+                    A expansão do cenário comunicativo e a completa mudança na dimensão de alcance deste é inegável, tal qual, as consequências desta configuração. O acesso instantâneo e a dificuldade de compreensão, bem como, o apelo ao engajamento, faz com que os consumidores de conteúdos queiram compartilhar o que recebem o quanto antes, sem verificar a veracidade das informações.
+                    Analisar o progresso da comunicação e desejar que o mesmo sustente sua evolução é, portanto, enterder sua conexão com um dos mais importantes fenômenos atuais, as "Fake News".</h3>
+            </div>
+
+
     <!-- Container para o infográfico -->
     <div class="infographic-container">
         <img src="IMAGENS DO SITE/INFOGRÁFICO - SAI DO FAKE (1).png" alt="Infográfico">
