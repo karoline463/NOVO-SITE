@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre fake news</title>
+    <style>
+        /* Reset global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(img/BANNER%20FUNDO.png);
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            font-family: 'Dejanire Headline Bold Italic', 'Arboria Book', 'Gimlet Display', Arial, sans-serif;
+            line-height: 1.6; /* Aumenta o espaçamento das linhas */
+        }
+
+        header {
+            background-color: #1679ab;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            transform: scale(1.5);
+            transform-origin: left center;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #663f3f;
+            color: #1679ab;
+            border-radius: 4px;
+        }
+
+        .banner {
+            margin-top: 70px; /* Espaço abaixo do cabeçalho */
+            width: 100%;
+            height: 400px; /* Altura do banner */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .intro {
+            width: 95%;
+            margin-bottom: 40px;
+            font-family: 'Gimlet Display';
+            font-size: 18px;
+            text-align: center;
+            margin: 0 auto;
+            border-bottom: 2px solid black;
+        }
+
+        .photo-text-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 1000px;
+            width: 100%;
+            font-family: 'Arboria Book';
+        }
+
+        .photo-text-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .photo-text-item img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .photo-text-item .text {
+            flex: 1;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #1679ab;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        footer .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        footer .footer-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="IMAGENS DO SITE/LOGO.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="A comunicação.html">A comunicação</a></li>
+                <li><a href="Sobre fake news.html">Sobre fake news</a></li>
+                <li><a href="viralizou.html">Viralizou</a></li>
+                <li><a href="Pot trás das páginas.html">Por trás das páginas</a></li>
+            </ul>
+        </nav>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="IMAGENS DO SITE/2 spot.png" alt="Facebook" style="height: 31px; margin-left: 10px;">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="IMAGENS DO SITE/2 insta.png" alt="Instagram" style="height: 34px; margin-left: 10px;">
+            </a>
+        </div>
+    </header>
+
+    <div class="banner">
+        <img src="IMAGENS DO SITE/banner sobre fake.jpeg" alt="Banner"> <!-- Ajuste o caminho da imagem do banner -->
+    </div>
+
+    <main>
+        <div class="content"></div>
+        <div class="intro">
+            <h1></h1>
+            <h3>A disseminação de informações falsas, ou "fake news", é um fenômeno que afeta a sociedade moderna de diversas maneiras. Para entender melhor como pessoas de diferentes faixa etária e conhecimentos lidam com essa questão, conversamos com Funcionários e alunos da escola SESI, que compartilhou suas experiências e opiniões sobre o impacto das notícias falsas.</h3>
+            <br><br>
+        </div>
+        <div class="content">
+            <div class="photo-text-container">
+                <div class="photo-text-item">
+                    <img src="IMAGENS DO SITE/foto ronaldo.jfif" alt="Foto 1">
+                    <div class="text">
+                        <h2>Desvendando Fake News: A Perspectiva de um Jovem Conectado</h2>
+                        <p>Mergulhe na mente de um jovem engajado nas redes sociais e conheça sua luta contra a desinformação. Ronaldo, de 17 anos, estudante da escola SESI, compartilha experiências impactantes, desde a importância da verificação de fatos até as vulnerabilidades dos idosos no mundo digital...</p>
+                        <h4>Para mais, acesse a matéria completa:</h4>
+                        <a href="URL_DA_MATERIA_COMPLETA" target="_blank" style="color: #1679ab; text-decoration: underline;">Clique aqui</a>
+                    </div>
+                </div>
+                <br>
+                <div class="photo-text-item">
+                    <img src="IMAGENS DO SITE/Maria Helena.jfif" alt="Foto 2">
+                    <div class="text">
+                        <h2>Fake News: O impacto das redes sociais e o desafio da verificação de informações</h2>
+                        <p>Maria Helena Cesco, funcionária da portaria da escola SESI, traz à tona questões cruciais sobre as fake news nas redes sociais...</p>
+                        <h4>Para mais, acesse a matéria completa:</h4>
+                        <a href="URL_DA_MATERIA_COMPLETA" target="_blank" style="color: #1679ab; text-decoration: underline;">Clique aqui</a>
+                    </div>
+                </div>
+                <br>
+                <div class="photo-text-item">
+                    <img src="IMAGENS DO SITE/Angelica.jpg" alt="Foto 3">
+                    <div class="text">
+                        <h2>Eu nunca caí em uma fake news!</h2>
+                        <p>Angélica Romeiro, professora da escola Sesi, discute o impacto das fake news e da tecnologia na disseminação de informações falsas...</p>
+                        <h4>Para mais, acesse a matéria completa:</h4>
+                        <a href="URL_DA_MATERIA_COMPLETA" target="_blank" style="color: #1679ab; text-decoration: underline;">Clique aqui</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Sai do fake. Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Termos de Serviço</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

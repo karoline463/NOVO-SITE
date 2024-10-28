@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Comunicação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url('img/BANNER\ FUNDO.png'); /* Caminho da imagem */
+            background-size: cover; /* Faz com que a imagem cubra toda a tela */
+            background-position: center; /* Centraliza a imagem no meio da tela */
+            height: 100vh; /* Garante que a altura do body seja 100% da altura da viewport */
+            margin: 0;
+            font-family: 'Dejanire Headline Bold Italic', 'Arboria Book', 'Gimlet Display', Arial, sans-serif;
+        }
+
+        header {
+            background-color: #1679ab; /* Cor de fundo com transparência */
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px; /* Tamanho inicial da logo */
+            width: auto;
+            transform: scale(1.5); /* Aumenta o tamanho da logo em 50% */
+            transform-origin: left center; /* Alinha a escala a partir da esquerda */
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #663f3f;
+            color: #1679ab;
+            border-radius: 4px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 5px;
+        }
+        .search-bar input {
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+            width: 200px;
+        }
+        .search-bar button {
+            border: none;
+            background-color: #1679ab;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+            /* Adiciona margem para compensar o cabeçalho fixo */
+        }
+        .intro {
+            width: 95%;
+            margin-bottom: 40px;
+            font-family: 'Gimlet Display';
+            font-size: 18px;
+            text-align: center;
+            margin: 0 auto;
+            border-bottom: 2px solid black;
+            
+        }
+
+
+        .infographic-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 60px 0; /* Margem para criar espaço abaixo do cabeçalho fixo */
+            padding: 10px;
+        }
+        .infographic-container img {
+            max-width: 90%; /* A imagem ocupa até 90% da largura da tela */
+            height: auto;
+            border: 2px solid #1679ab; /* Borda opcional ao redor do infográfico */
+            border-radius: 8px; /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar destaque */
+        }
+
+        footer {
+            background-color: #1679ab; /* Cor de fundo do rodapé com transparência */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        footer p {
+            margin-bottom: 10px;
+        }
+        footer .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        footer .footer-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url('img/BANNER FUNDO.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Dejanire Headline Bold Italic', 'Arboria Book', 'Gimlet Display', Arial, sans-serif;
+        }
+        /* Resto do CSS */
+
+        .banner {
+            position: relative; /* Cria um contexto para o banner */
+            width: 100%;
+            height: calc(70vh - 100px); /* Ocupa a altura restante da viewport */
+    margin-top: -37px; /* Adiciona uma margem superior para afastar do cabeçalho */
+    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse o contêiner */
+        }
+        .banner img {
+            position: absolute; /* Posiciona a imagem absolutamente */
+            top: 50%; /* Centraliza verticalmente */
+            left: 50%; /* Centraliza horizontalmente */
+            width: 100%; /* Faz a imagem ocupar 100% da largura */
+            height: 100%; /* Faz a imagem ocupar 100% da altura */
+            object-fit: cover; /* Mantém a proporção da imagem e cobre o contêiner */
+            transform: translate(-50%, -50%); /* Centraliza a imagem */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        
+        <div class="logo">
+            <img src="IMAGENS DO SITE/LOGO.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="A comunicação.html">A comunicação</a></li>
+                <li><a href="Sobre fake news.html">Sobre fake news</a></li>
+                <li><a href="viralizou.html">Viralizou</a></li>
+                <li><a href="Pot trás das páginas.html">Por trás das páginas</a></li>
+            </ul>
+        </nav>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="IMAGENS DO SITE/2 spot.png" alt="Facebook" style="height: 31px; margin-left: 10px;">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="IMAGENS DO SITE/2 insta.png" alt="Instagram" style="height: 34px; margin-left: 10px;">
+            </a>
+        </div>
+    </header>
+    <br>
+    <br>
+    <div class="banner">
+        <img src="IMAGENS DO SITE/banner a comunicação.jpeg" alt="Banner">
+    </div>
+    <main>
+    <!-- Container para o infográfico -->
+    <div class="infographic-container">
+        <img src="IMAGENS DO SITE/INFOGRÁFICO - SAI DO FAKE (1).png" alt="Infográfico">
+        
+    </div>
+   
+    <br>
+    <br>
+    <footer>
+        <div class="footer-content">
+            <p>@ 2024 Sai do fake. Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Termos de Serviço</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
