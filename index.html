@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -15,11 +14,10 @@
             background-image: url(img/BANNER\ FUNDO.png);
             margin: 0;
             font-family: 'Dejanire Headline Bold Italic', 'Arboria Book', 'Gimlet Display', Arial, sans-serif;
-            line-height: 1.6; /* Aumenta o espaçamento das linhas */
+            line-height: 1.6;
         }
-
         header {
-            background-color: #1679ab; /* Cor de fundo  */
+            background-color: #1679ab;
             color: #fff;
             padding: 10px 20px;
             display: flex;
@@ -31,29 +29,16 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
-        .logo {
-            display: flex;
-            align-items: center;
-        }
         .logo img {
-            height: 50px; /* Tamanho inicial da logo */
+            height: 50px;
             width: auto;
-            transform: scale(1.5); /* Aumenta o tamanho da logo em 50% */
-            transform-origin: left center; /* Alinha a escala a partir da esquerda */
-        }
-        nav {
-            display: flex;
-            align-items: center;
+            transform: scale(1.5);
+            transform-origin: left center;
         }
         nav ul {
             list-style: none;
-            padding: 0;
-            margin: 0;
             display: flex;
             gap: 20px;
-        }
-        nav ul li {
-            margin: 0;
         }
         nav ul li a {
             color: #fff;
@@ -62,56 +47,22 @@
             padding: 10px;
             transition: background-color 0.3s, color 0.3s;
         }
-        
         nav ul li a:hover {
             background-color:#663f3f;
             color: #1679ab;
             border-radius: 4px;
         }
-        .search-bar {
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            border-radius: 4px;
-            padding: 5px;
-        }
-        .search-bar input {
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 14px;
-            outline: none;
-            width: 200px;
-        }
-        .search-bar button {
-            border: none;
-            background-color: #1679ab;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-left: 5px;
-        }
-
-        /* Estilos do Carrossel */
         .carousel {
             position: relative;
             max-width: 100%;
             overflow: hidden;
-            margin-top: 0px; /* Espaço para o cabeçalho fixo */
         }
         .carousel-images {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
-        .carousel-image {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-        .carousel img {
+        .carousel-image img {
             width: 100%;
-            height: auto;
-            display: block;
         }
         .carousel-controls {
             position: absolute;
@@ -128,123 +79,45 @@
             padding: 10px;
             cursor: pointer;
         }
-        
-
-        /* Estilos do Corpo */
-        .content {
-            padding: 20px;
-            margin-top: 10px; /* Espaço abaixo do carrossel */
+        .video-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
         }
-        .section {
-            margin-bottom: 20px;
-            font-family: 'Dejanire Headline Bold Italic';
-            text-align: center;
-        }
-        .section h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
-            font-family: 'Dejanire Headline Bold Italic';
-        }
-        .section img {
-            max-width: 100%;
+        #featuredVideo {
+            display: block;
+            width: 100%;
             height: auto;
-            margin-bottom: 10px;
         }
-        .section p {
-            font-size: 18px;
-        }
-        .news-item, .highlight-item, .recent-item {
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            padding: 20px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-family: 'Arboria Book';
+            justify-content: center;
+            cursor: pointer;
         }
-        .news-item img, .highlight-item img, .recent-item img {
-            max-width: 50%;
-            height: auto;
+        .play-overlay img {
+            width: 50px;
+            height: 50px;
         }
-        .news-item .text, .highlight-item .text, .recent-item .text {
-            max-width: 45%;
+        .play-overlay.hidden {
+            display: none;
         }
-        .news-item h3, .highlight-item h3, .recent-item h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        .news-item p, .highlight-item p, .recent-item p {
-            font-size: 18px;
-            font-family: 'Arboria Book';
-        }
-
-        /* Estilos do Rodapé */
         footer {
             background-color: #1679ab;
-            color:#fff ;
+            color: #fff;
             padding: 20px;
             text-align: center;
-        }
-        footer .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        footer h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        footer p {
-            font-size: 14px;
-            margin: 5px 0;
-        }
-        footer .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        footer .footer-links a {
-            text-decoration: none;
-            color: #fff;
-        }
-        footer .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Estilos do Vídeo */
-        .video-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            text-align: left;
-            margin-top: 20px;
-        }
-
-        .video-text {
-            flex: 1;
-            padding-right: 50px;
-            font-family: 'Arboria Book';
-        }
-
-        .video-text h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .video-text p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .video-section img {
-            max-width: 100%;
-            height: auto;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo">
             <img src="IMAGENS DO SITE/LOGO.png" alt="Logo">
@@ -257,112 +130,71 @@
                 <li><a href="viralizou.html">Viralizou</a></li>
                 <li><a href="Pod cast.html">Ouça já</a></li>
                 <li><a href="Por trás das páginas.html">Por trás das páginas</a></li>
-                
-
             </ul>
         </nav>
-        <div class="social-media">
-            <a href="https://spotifyanchor-web.app.link/e/DjRd0LPP4Nb" target="_blank">
-                <img src="IMAGENS DO SITE/2 spot.png" alt="Spotify" style="height: 31px; margin-left: 10px;">
-            </a>
-            <a href="https://www.instagram.com/" target="_blank">
-                <img src="IMAGENS DO SITE/2 insta.png" alt="Instagram" style="height: 34px; margin-left: 10px;">
-            </a>
-        </div>
     </header>
-    
 
-<!-- Carrossel de Imagens -->
-<div class="carousel">
-    <div class="carousel-images">
-        <div class="carousel-image"><img src="IMAGENS DO SITE/BANNER 1 CARROSSEL VERSÃO 2.png" alt="Imagem 1"></div>
-        <div class="carousel-image"><img src="IMAGENS DO SITE/Banner carrossel 2.jpeg" alt="Imagem 2"></div>
-        <div class="carousel-image"><img src="IMAGENS DO SITE/por no lugar 22.png" alt="Imagem 3"></div>
-    </div>
-    <div class="carousel-controls">
-        <button class="carousel-button" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="carousel-button" onclick="moveSlide(1)">&#10095;</button>
-    </div>
-</div>
-
-<!-- Corpo do Site -->
-<div class="content">
-    <div class="section">
-        <h2>O fenômeno das Fake News e a manipulação da nova realidade</h2>
-    </div>
-    <div class="news-item">
-        <div class="text">
-            <h3>Apesar de parecer recente, o termo fake news, ou notícia falsa, em português, é mais antigo do que aparenta.</h3>
-            <p>Não é de hoje que mentiras são divulgadas como verdades, mas foi com o advento das redes sociais que esse tipo de publicação popularizou-se. A imprensa internacional começou a usar com mais frequência o termo fake news durante a eleição de 2016 nos Estados Unidos, na qual Donald Trump tornou-se presidente. Fake news é um termo em inglês e é usado para referir-se a falsas informações divulgadas, principalmente, em redes sociais.</p>
-            <p>Não é de hoje que mentiras são divulgadas como verdades, mas foi com o advento das redes sociais que esse tipo de publicação popularizou-se. A imprensa internacional começou a usar com mais frequência o termo fake news durante a eleição de 2016 nos Estados Unidos, na qual Donald Trump tornou-se presidente. Fake news é um termo em inglês e é usado para referir-se a falsas informações divulgadas, principalmente, em redes sociais.</p>
+    <div class="carousel">
+        <div class="carousel-images">
+            <div class="carousel-image"><img src="IMAGENS DO SITE/BANNER 1 CARROSSEL VERSÃO 2.png" alt="Imagem 1"></div>
+            <div class="carousel-image"><img src="IMAGENS DO SITE/Banner carrossel 2.jpeg" alt="Imagem 2"></div>
+            <div class="carousel-image"><img src="IMAGENS DO SITE/por no lugar 22.png" alt="Imagem 3"></div>
         </div>
-        <img src="IMAGENS DO SITE/grafico.png" alt="Notícia 1">
-    </div>
-    <div class="section">
-        <h2>Exemplos e consequências de fake news</h2>
-        <p>Qualquer tipo de informação falsa, da mais simples à mais descabida, induz as pessoas ao erro. Em vários casos, a notícia contém uma informação falsa cercada de outras verdadeiras. É principalmente nessas situações que estão escondidos os perigos das fake news, e suas consequências podem ser desastrosas. Um dado grave que foi constatado pelos pesquisadores do Massachusetts Institute of Technology (MIT), nos Estados Unidos, é que a chance de uma notícia falsa ser repassada é consideravelmente maior que a de uma verdadeira. Foram analisadas 126 mil notícias, e percebeu-se que a probabilidade de republicar uma informação falsa é 70% maior do que a de republicar uma notícia verdadeira.</p>
-    </div>
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
+        <div class="carousel-controls">
+            <button class="carousel-button" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-button" onclick="moveSlide(1)">&#10095;</button>
         </div>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
+
     <div class="video-section">
         <div class="video-text">
             <h2>Vídeo em Destaque</h2>
-            <p>O material sugerido explica de forma simples e acessível o que são notícias falsas, ou fake news, direcionado ao público infantil. Ele aborda como essas informações enganosas podem se espalhar rapidamente, especialmente pela internet e redes sociais, e podem causar confusão ou problemas. 
-
-            O vídeo oferece dicas para as crianças identificarem essas notícias, como desconfiar de manchetes exageradas, checar a fonte da informação, verificar se outros sites confiáveis estão publicando a mesma história e não compartilhar algo sem ter certeza de que é verdadeiro. A ideia é ensinar a importância de pensar criticamente e não acreditar em tudo que se lê na internet.</p>
-    
+            <p>O material sugerido explica de forma simples e acessível o que são notícias falsas, ou fake news...</p>
         </div>
-        <div class="section">
-            
-            <a href="https://www.youtube.com/watch?v=xRWcW0RtYjY" target="_blank">
-                <img src="IMAGENS DO SITE/tapa buraco 2.jpeg" alt="Descrição da Imagem" style="max-width: 100%; height: auto;">
-            </a>
+        <div class="video-wrapper">
+            <video id="featuredVideo" width="100%" height="auto" poster="IMAGENS DO SITE/tapa buraco 2.jpeg" controls>
+                <source src="videos/meu-video.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <div id="playButton" class="play-overlay" onclick="playVideo()">
+                <img src="IMAGENS DO SITE/play-icon.png" alt="Play">
+            </div>
         </div>
-        
     </div>
-</div>
 
-<!-- Rodapé -->
-<footer>
-    <div class="footer-content">
+    <footer>
         <p>@ 2024 Sai do fake. Todos os direitos reservados.</p>
-        <ul class="footer-links">
-            <li><a href="#">Política de Privacidade</a></li>
-            <li><a href="#">Termos de Serviço</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </div>
-</footer>
+    </footer>
 
-<script>
-    let currentSlide = 0;
-    const intervalTime = 3000; // Tempo em milissegundos para mudar o slide
+    <script>
+        const video = document.getElementById('featuredVideo');
+        const playButton = document.getElementById('playButton');
 
-    function moveSlide(step) {
-        const slides = document.querySelectorAll('.carousel-image');
-        const totalSlides = slides.length;
+        function playVideo() {
+            video.play();
+            playButton.classList.add('hidden');
+        }
 
-        currentSlide = (currentSlide + step + totalSlides) % totalSlides;
-        const newTransformValue = -currentSlide * 100;
-        document.querySelector('.carousel-images').style.transform = `translateX(${newTransformValue}%)`;
-    }
+        video.addEventListener('pause', () => {
+            playButton.classList.remove('hidden');
+        });
 
-    function startCarousel() {
-        setInterval(() => moveSlide(1), intervalTime);
-    }
+        video.addEventListener('play', () => {
+            playButton.classList.add('hidden');
+        });
 
-    // Iniciar o carrossel automático
-    startCarousel();
-</script>
+        let currentSlide = 0;
 
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.carousel-image');
+            currentSlide = (currentSlide + step + slides.length) % slides.length;
+            const newTransform = -currentSlide * 100;
+            document.querySelector('.carousel-images').style.transform = `translateX(${newTransform}%)`;
+        }
+
+        setInterval(() => moveSlide(1), 3000);
+    </script>
 </body>
 </html>
+
 
