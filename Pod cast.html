@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Cards de Destaques</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin-top: 60px; /* Para não sobrepor o cabeçalho fixo */
+            background-image: url('img/BANNER\ FUNDO.png'); /* Caminho da imagem de fundo */
+            background-size: cover; /* A imagem de fundo cobre toda a tela */
+            background-position: center; /* A imagem fica centralizada */
+            background-attachment: fixed; /* A imagem permanece fixa enquanto o conteúdo rola */
+        }
+
+        /* Estilos do Cabeçalho */
+        header {
+            background-color: #1679ab; /* Cabeçalho sem translucidez */
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+            width: auto;
+            transform: scale(1.5);
+            transform-origin: left center;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #663f3f;
+            color: #1679ab;
+            border-radius: 4px;
+        }
+        .social-media a {
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        /* Estilos do Corpo */
+        .content {
+            padding: 20px;
+            margin-top: 80px; /* Para dar espaço após o cabeçalho fixo */
+        }
+
+        /* Estilos dos Cards */
+        .cards-container {
+            margin-top: 30px;
+        }
+        .card {
+            width: 100%;
+            height: 400px; /* Altura do card */
+            background-color: #fff;
+            display: flex;
+            flex-direction: row;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        /* Coluna da Esquerda (Imagem) */
+        .card-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px 0 0 8px; /* Bordas arredondadas no lado esquerdo */
+        }
+
+        /* Coluna da Direita (Texto) */
+        .card-text {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Botão "Ouça no Podcast" */
+        .card a {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 8px 16px;
+            background-color: #1679ab;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px; /* Tamanho reduzido */
+            transition: background-color 0.3s;
+        }
+        .card a:hover {
+            background-color: #005f79;
+        }
+
+        /* Título e Frase */
+        .card h2,
+        .card p {
+            color: black;
+            z-index: 10;
+        }
+        .card h2 {
+            font-size: 24px;
+            font-family: 'Dejanire Headline Bold Italic', Arial, sans-serif;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            margin-top: 20px; /* Distância um pouco maior */
+        }
+
+        /* Botão Play */
+        .play-btn {
+            position: absolute;
+            bottom: 40px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            padding: 10px;
+            font-size: 28px; /* Ícone de play */
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Minutagem (tempo) */
+        .time-display {
+            position: absolute;
+            bottom: 40px;
+            left: 80px;
+            color: #fff;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        /* Fita de Progresso */
+        .progress-bar {
+            position: absolute;
+            bottom: 30px;
+            left: 120px;
+            width: 60%;
+            height: 5px;
+            background-color: #ddd;
+            border-radius: 2px;
+            z-index: 5;
+        }
+        .progress-bar-filled {
+            height: 100%;
+            background-color: #1679ab;
+            width: 0%;
+            border-radius: 2px;
+        }
+
+        /* Estilos do Rodapé */
+        footer {
+            background-color: #1679ab; /* Cabeçalho sem translucidez */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        footer p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        footer .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        footer .footer-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="IMAGENS DO SITE/LOGO.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="A comunicação.html">A comunicação</a></li>
+                <li><a href="Sobre fake news.html">Sobre fake news</a></li>
+                <li><a href="viralizou.html">Viralizou</a></li>
+                <li><a href="Pod cast.html">Ouça já</a></li>
+                <li><a href="Pot trás das páginas.html">Por trás das páginas</a></li>
+                
+            </ul>
+        </nav>
+        <div class="social-media">
+            <a href="https://podcasters.spotify.com/pod/show/lauren-zaroli7" target="_blank">
+                <img src="IMAGENS DO SITE/2 spot.png" alt="Spotify" style="height: 31px; margin-left: 10px;">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="IMAGENS DO SITE/2 insta.png" alt="Instagram" style="height: 34px; margin-left: 10px;">
+            </a>
+        </div>
+    </header>
+
+    <div class="content">
+        <!-- Cards de Destaque -->
+        <div class="cards-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-image" style="background-image: url('IMAGENS DO SITE/1.png');"></div>
+                <div class="card-text">
+                    <a href="https://open.spotify.com/episode/0po3IyX2sS6osGBS87q0IF?si=085e23d3eca646a1" target="_blank">Ouça mais</a>
+                    <button class="play-btn" id="play-btn1" onclick="playAudio('audio1')">&#9654;</button>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h2>A comunicação está sendo distorcida pelas mentiras e pela corrupção. Embarque com a gente e entenda como o excesso de informações impacta nossa percepção do mundo.</h2>
+                    <p>SAI DO FAKE</p>
+                    <audio id="audio1" src="IMAGENS DO SITE/MP3.mpeg" preload="none"></audio>
+                    <div class="time-display" id="time1">0:00</div>
+                    <div class="progress-bar">
+                        <div class="progress-bar-filled" id="progress1"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-image" style="background-image: url('IMAGENS DO SITE/1.png');"></div>
+                <div class="card-text">
+                    <a href="https://open.spotify.com/episode/7CSCVfBWxWfJPCGkgCt3zC?si=55969c45af5e40dd" target="_blank">Ouça mais</a>
+                    <button class="play-btn" id="play-btn2" onclick="playAudio('audio2')">&#9654;</button>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h2>A era digital: A necessidade de encaixar-se em um mundo saturado de informações e mentiras.</h2>
+                    <p>Gilberto Gil já sabia: a internet virou um labirinto de desinformação e confusão.</p>
+                    <audio id="audio2" src="IMAGENS DO SITE/para o site 2.mp3" preload="none"></audio>
+                    <div class="time-display" id="time2">0:00</div>
+                    <div class="progress-bar">
+                        <div class="progress-bar-filled" id="progress2"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-image" style="background-image: url('IMAGENS DO SITE/1.png');"></div>
+                <div class="card-text">
+                    <a href="https://open.spotify.com/episode/0uj5z7vDi7t627Emxt44rD?si=6855de153bdd43d5" target="_blank">Ouça mais</a>
+                    <button class="play-btn" id="play-btn3" onclick="playAudio('audio3')">&#9654;</button>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h2>Desinformação no poder: Como as eleições de 2024 em SP refletem na nossa democracia?</h2>
+                    <p>Neste episódio assunto é o posicionamento, ou então, a desinformação do governador de São Paulo.</p>
+                    <audio id="audio3" src="IMAGENS DO SITE/para o site_mixagem.mp3" preload="none"></audio>
+                    <div class="time-display" id="time3">0:00</div>
+                    <div class="progress-bar">
+                        <div class="progress-bar-filled" id="progress3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function playAudio(id) {
+            const audio = document.getElementById(id);
+            const playButton = document.getElementById('play-btn' + id.charAt(id.length - 1));
+            const progressBar = document.getElementById('progress' + id.charAt(id.length - 1));
+            const timeDisplay = document.getElementById('time' + id.charAt(id.length - 1));
+
+            if (audio.paused) {
+                audio.play();
+                playButton.innerHTML = '&#10074;&#10074;'; // Muda para o ícone de pausa
+
+                audio.ontimeupdate = function () {
+                    const minutes = Math.floor(audio.currentTime / 60);
+                    const seconds = Math.floor(audio.currentTime % 60);
+                    timeDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+                    // Atualiza a barra de progresso
+                    const progress = (audio.currentTime / audio.duration) * 100;
+                    progressBar.style.width = progress + '%';
+                };
+            } else {
+                audio.pause();
+                playButton.innerHTML = '&#9654;'; // Muda para o ícone de play
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+

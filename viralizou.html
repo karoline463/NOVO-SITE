@@ -15,7 +15,6 @@
 
         body {
             background-image: url(img/BANNER\ FUNDO.png);
-            /* Ajuste o caminho da imagem se necessário */
             background-size: cover;
             background-position: center;
             margin: 0;
@@ -24,7 +23,6 @@
 
         header {
             background-color: #1679ab;
-            /* Cor de fundo */
             color: #fff;
             padding: 10px 20px;
             display: flex;
@@ -44,12 +42,9 @@
 
         .logo img {
             height: 50px;
-            /* Tamanho inicial da logo */
             width: auto;
             transform: scale(1.5);
-            /* Aumenta o tamanho da logo em 50% */
             transform-origin: left center;
-            /* Alinha a escala a partir da esquerda */
         }
 
         nav {
@@ -83,64 +78,43 @@
             border-radius: 4px;
         }
 
-        .search-bar {
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            border-radius: 4px;
-            padding: 5px;
-        }
-
-        .search-bar input {
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 14px;
-            outline: none;
-            width: 200px;
-        }
-
-        .search-bar button {
-            border: none;
-            background-color: #1679ab;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-left: 5px;
-        }
-
         .card-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
             margin-top: 25px;
-            /* Adiciona margem para compensar o cabeçalho fixo */
+            padding: 10px;
         }
 
         .card {
-            background: #fff;
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+            height: 400px; /* Tamanho fixo para altura */
+            overflow: hidden;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 300px;
-            text-align: center;
         }
 
         .card img {
             width: 100%;
-            /* Garante que a largura da imagem ocupe todo o espaço disponível no card */
-            height: 200px;
-            /* Define uma altura fixa para todas as imagens */
+            height: 100%;
             object-fit: cover;
-            /* Garante que a imagem seja cortada para preencher a área definida, mantendo a proporção */
-            border-radius: 4px;
-            /* Mantém a borda arredondada */
-            margin-bottom: 15px;
-            /* Espaçamento entre a imagem e o conteúdo do card */
+            object-position: center;
         }
 
+        .card-content {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para o texto */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+        }
 
         .card h2 {
             font-size: 1.5rem;
@@ -149,7 +123,7 @@
 
         .card p {
             font-size: 1rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .card a {
@@ -202,24 +176,17 @@
             text-decoration: underline;
         }
 
-        .card {
-            background: #f0f8ff;
-            /* Cor de fundo azul clara */
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 300px;
-            text-align: center;
-            transition: transform 0.3s, background-color 0.3s;
-            font-family: 'Arboria Book', serif;
-            /* Adiciona a fonte aos cards */
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .card {
+                height: 300px;
+            }
         }
 
-        .card:hover {
-            background-color: #e0e8ef;
-            /* Cor ao passar o mouse sobre o card */
-            transform: scale(1.05);
-            /* Aumenta o tamanho do card ao passar o mouse */
+        @media (max-width: 480px) {
+            .card {
+                height: 250px;
+            }
         }
     </style>
 </head>
@@ -231,11 +198,13 @@
         </div>
         <nav>
             <ul>
-                <li><a href="Home.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="A comunicação.html">A comunicação</a></li>
                 <li><a href="Sobre fake news.html">Sobre fake news</a></li>
                 <li><a href="viralizou.html">Viralizou</a></li>
+                <li><a href="Pod cast.html">Ouça já</a></li>
                 <li><a href="Pot trás das páginas.html">Por trás das páginas</a></li>
+                
             </ul>
         </nav>
         <div class="social-media">
@@ -246,95 +215,45 @@
                 <img src="IMAGENS DO SITE/2 insta.png" alt="Instagram" style="height: 34px; margin-left: 10px;">
             </a>
         </div>
-    </header> 
+    </header>
+
     <main>
         <div class="card-container">
             <div class="card">
-                <img src="IMAGENS DO SITE/caso1.jfif" alt="Notícia 1"> <!-- Adicione a imagem da notícia -->
-                <h2>Inocente Assassinada: Fake News Leva ao Linchamento</h2>
-                <p>Fabiane Maria de Jesus, linchada até a morte por ser confundida com uma sequestradora de bebês. Cinco
-                    pessoas foram presas por esse crime e o caso é lembrado até os dias de hoje.</p>
-                <a href="https://exame.com/pop/novela-travessia-ira-retratar-caso-real-de-linchamento-por-fake-news-entenda/"
-                    target="_blank">Leia mais</a>
+                <img src="IMAGENS DO SITE/caso1.jfif" alt="Notícia 1">
+                <div class="card-content">
+                    <h2>Inocente Assassinada: Fake News Leva ao Linchamento</h2>
+                    <p>Fabiane Maria de Jesus, linchada até a morte por ser confundida com uma sequestradora de bebês. Cinco pessoas foram presas por esse crime e o caso é lembrado até os dias de hoje.</p>
+                    <a href="https://exame.com/pop/novela-travessia-ira-retratar-caso-real-de-linchamento-por-fake-news-entenda/" target="_blank">Leia mais</a>
+                </div>
             </div>
             <div class="card">
-                <img src="IMAGENS DO SITE/variola_vacina.webp" alt="Notícia 2"> <!-- Adicione a imagem da notícia -->
-                <h2>Varíola dos Macacos Ligada às Vacinas?</h2>
-                <p>Circulam nas redes sociais mensagens que afirmam que a varíola dos macacos é efeito colateral das
-                    vacinas contra a Covid-19 ou está relacionada com os imunizantes. É #FAKE.</p>
-                <a href="https://g1.globo.com/fato-ou-fake/coronavirus/noticia/2022/06/08/e-fake-que-vacinas-contra-a-covid-19-causam-a-variola-dos-macacos.ghtml"
-                    target="_blank">Leia mais</a>
+                <img src="IMAGENS DO SITE/variola_vacina.webp" alt="Notícia 2">
+                <div class="card-content">
+                    <h2>Varíola dos Macacos Ligada às Vacinas?</h2>
+                    <p>Circulam nas redes sociais mensagens que afirmam que a varíola dos macacos é efeito colateral das vacinas contra a Covid-19 ou está relacionada com os imunizantes. É #FAKE.</p>
+                    <a href="https://g1.globo.com/fato-ou-fake/coronavirus/noticia/2022/06/08/e-fake-que-vacinas-contra-a-covid-19-causam-a-variola-dos-macacos.ghtml" target="_blank">Leia mais</a>
+                </div>
             </div>
             <div class="card">
-                <img src="IMAGENS DO SITE/Marille 2.jpg" alt="Notícia 3"> <!-- Adicione a imagem da notícia -->
-                <h2>Fake News: Marielle Franco e o Narcotráfico</h2>
-                <p>“Conheçam um novo mito da esquerda, Marielle Franco. Engravidou aos 16 anos, ex esposa do Marcinho
-                    VP, usuária de maconha, defensor de facção rival e eleita pelo comando vermelho, exonerou
-                    recentemente seis funcionários, mas quem matou, foi a PM.”</p>
-                <a href="https://g1.globo.com/e-ou-nao-e/noticia/marielle-engravidou-aos-16-foi-casada-com-o-traficante-marcinho-vp-ignorava-as-mortes-de-policiais-nao-e-verdade.ghtml"
-                    target="_blank">Leia mais</a>
+                <img src="IMAGENS DO SITE/Marille 2.jpg" alt="Notícia 3">
+                <div class="card-content">
+                    <h2>Fake News: Marielle Franco e o Narcotráfico</h2>
+                    <p>“Conheçam um novo mito da esquerda, Marielle Franco. Engravidou aos 16 anos, ex esposa do Marcinho VP, usuária de maconha, defensor de facção rival e eleita pelo comando vermelho, exonerou recentemente seis funcionários, mas quem matou, foi a PM.”</p>
+                    <a href="https://g1.globo.com/e-ou-nao-e/noticia/marielle-franco-fake-news.ghtml" target="_blank">Leia mais</a>
+                </div>
             </div>
-            <div class="card">
-                <img src="IMAGENS DO SITE/Manuella.webp" alt="Notícia 3"> <!-- Adicione a imagem da notícia -->
-                <h2>Camiseta 'Jesus é Travesti' e Manuela D'Ávila: Verdade?</h2>
-                <p>Circula nas redes sociais uma imagem em que a candidata a vice-presidente Manuela D'Ávila (PCdoB)
-                    aparece com uma camiseta com os dizeres "Jesus é travesti". .</p>
-                <a href="https://g1.globo.com/fato-ou-fake/noticia/2018/10/02/e-fake-imagem-em-que-manuela-davila-aparece-com-camiseta-jesus-e-travesti.ghtml"
-                    target="_blank">Leia mais</a>
-            </div>
-            <div class="card">
-                <img src="IMAGENS DO SITE/RS.jpg" alt="Notícia 3"> <!-- Adicione a imagem da notícia -->
-                <h2>Governo do RS Proíbe Doações: Solidariedade em Xeque!</h2>
-                <p>Circula nas redes sociais um vídeo segundo o qual a Secretaria da Fazenda do Rio Grande do Sul está
-                    impedindo a entrada de caminhões com doações para os desabrigados pelos temporais que atingiram o
-                    estado por falta de nota fiscal ou para cobrança de impostos. </p>
-                <a href="https://g1.globo.com/fato-ou-fake/noticia/2024/05/07/e-fake-que-rio-grande-do-sul-esta-impedindo-chegada-de-doacoes-por-falta-de-nota-fiscal.ghtml"
-                    target="_blank">Leia mais</a>
-            </div>
-            <div class="card">
-                <img src="IMAGENS DO SITE/Mpox.png" alt="Notícia 3"> <!-- Adicione a imagem da notícia -->
-                <h2>OMS Ordena Lockdowns Contra Mpox</h2>
-                <p>"A OMS ordena que os governos se preparem para 'mega-lockdowns' devido à cepa mortal da 'varíola dos
-                    macacos'. Será que conseguirão nos trancar de novo??? Ou será que os anestesiados pela TV e pelos
-                    partidos políticos vão acordar???".</p>
-                <a href="https://g1.globo.com/fato-ou-fake/noticia/2024/08/20/e-fake-que-a-organizacao-mundial-da-saude-ordenou-que-governos-devem-se-preparar-para-lockdown-contra-mpox.ghtml"
-                    target="_blank">Leia mais</a>
-            </div>
-            <div class="card">
-                <img src="IMAGENS DO SITE/Boxeadora.webp" alt="Notícia 3"> <!-- Adicione a imagem da notícia -->
-                <h2>Desmentido Boato sobre Imane Khelif: Boxeadora Não Mudou de Sexo</h2>
-                <p>Viralizou nas redes sociais que a boxeadora argelina Imane Khelif teria mudado de sexo para competir na categoria feminina nos Jogos Olímpicos de Paris 2024. É #FAKE.</p>
-                <a href="https://g1.globo.com/fato-ou-fake/noticia/2024/08/02/e-fake-que-boxeadora-imane-khelif-mudou-de-sexo-para-competir-nas-olimpiadas-de-paris.ghtml" target="_blank">Leia mais</a>
-            </div>
-            <div class="card">
-                <img src="IMAGENS DO SITE/neymar.png" alt="Notícia 3"> <!-- Adicione a imagem da notícia -->
-                <h2>Jogador famoso envolvido com jogo de aposta?</h2>
-                <p>"Olá, eu sou o Neymar, e estou patrocinando este jogo. Não é necessário fazer nenhum deposito. Cadastre-se e você receberá um bônus grátis", diz supostamente o atleta, na gravação, enquanto imagens do jogo passam na tela.</p>
-                <a href="https://g1.globo.com/fato-ou-fake/noticia/2024/01/26/e-fake-video-que-mostra-neymar-fazendo-publicidade-para-jogo-do-tigrinho.ghtml" target="_blank">Leia mais</a>
-            </div>
-            <!-- Adicione mais cards conforme necessário -->
+            <!-- Adicione outros cards aqui, mantendo a mesma estrutura -->
         </div>
     </main>
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-        </div>
-    </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
-    <br>
+
     <footer>
         <div class="footer-content">
-            <p>
             <p>&copy; 2024 Sai do fake. Todos os direitos reservados.</p>
-            </p>
             <ul class="footer-links">
                 <li><a href="#">Política de Privacidade</a></li>
                 <li><a href="#">Termos de Serviço</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#">Sobre nós</a></li>
             </ul>
         </div>
     </footer>
